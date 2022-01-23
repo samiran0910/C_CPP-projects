@@ -1,6 +1,6 @@
 // write a program to display fibonacci seriees 
 // using recursion
-#include<bits/stdc++.h>
+#include<iostream>
 using namespace std;
 int f(int n)
 {
@@ -13,21 +13,21 @@ int f(int n)
 }
 main(){
     int n;
+    cout<<"enter the number of terms"<<endl;
     cin>>n;
     for(int i=0; i<n; i++)
         cout<<"\t"<<f(i);
     
-}   
+} 
 
 // using iteration
-#include <stdio.h>
-#include <conio.h> 
-int main()
+
+void itt()
 {
   int n, first = 0, second = 1, result, i;
-  printf("Please give an input upto you want to print series : \n");
-  scanf("%d", &n);
-  printf("Fibonacci Series is:\n");
+  cout<<"Enter the number of terms : "<<endl;
+  cin>>n;
+  cout<<"Fibonacci Series is: "<<endl;
   for (i = 0; i < n; i++)
   {
     if (i <= 1)
@@ -38,7 +38,7 @@ int main()
       first = second;
       second = result;
     }
-    printf("%d\n", result);
+    cout<<"\t" <<result;
   } 
   return 0;
-} 
+}
