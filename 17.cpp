@@ -17,16 +17,16 @@ void mergeArrays(int arr1[], int arr2[], int n1,
 			arr3[k++] = arr2[j++];
 	}
 
-	// Store remaining elements of first array
+	
 	while (i < n1)
 		arr3[k++] = arr1[i++];
 
-	// Store remaining elements of second array
+	
 	while (j < n2)
 		arr3[k++] = arr2[j++];
 }
 
-// Driver code
+
 int main()
 {
 	int arr1[] = {1, 2, 3, 4};

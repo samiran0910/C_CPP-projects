@@ -11,15 +11,7 @@ int f(int n)
     else
         return (f(n-1)+f(n-2));
 }
-main(){
-    int n;
-    cout<<"enter the number of terms"<<endl;
-    cin>>n;
-    for(int i=0; i<n; i++)
-        cout<<"\t"<<f(i);
-    
-} 
-
+ 
 // using iteration
 
 void itt()
@@ -40,5 +32,24 @@ void itt()
     }
     cout<<"\t" <<result;
   } 
+}
+
+int main(){
+  //menu for user to choose the option of fibonacci series 
+  int choice;
+  cout<<"Enter the choice of fibonacci series"<<endl;
+  cout<<"1.Recursion"<<endl;
+  cout<<"2.Iteration"<<endl;
+  cin>>choice;
+  switch(choice){
+    case 1:
+      f(5);
+      break;
+    case 2:
+      itt();
+      break;
+    default:
+      cout<<"Invalid choice"<<endl;
+  }
   return 0;
 }

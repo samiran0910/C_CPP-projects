@@ -1,8 +1,9 @@
-#include<bits/stdc++.h>
+//write a program to find the sum of  elements entered by the user. To write this programme 
+//allocate memory dynamically using malloc or calloc functions or new operator.
+#include<iostream>
 using namespace std;
-main ()
+int main ()
 {
-  ios_base::sync_with_stdio (false);
   int n, sum = 0;
   int *a = new int (n);
   cout << "Enter the number of elements:";
