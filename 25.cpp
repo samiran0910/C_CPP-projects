@@ -1,45 +1,27 @@
-//Write a program to retrieve the student information from file created in previous question and
-// print it in following format:
-//Roll No. Name Marks
+//Write a program to retrieve information from a file and print it on the screen.
+
 #include <iostream>
 #include <fstream>
 using namespace std;
-
 struct Student
 {
     int rollno;
-    string name;
-    string classs;
-    int year;
-    int total;
+    char name[30];
+    int class1;
 };
-
-void getdata(Student s[], int n)
-{
-    ifstream fin;
-    fin.open("student.txt");
-    for(int i=0;i<n;i++)
-    {
-        
-        fin>>s[i].rollno>>s[i].name>>s[i].classs>>s[i].year>>s[i].total;
-    }
-    fin.close();
-}
-// print the data in following format: rollno name marks
-void display(Student s[], int n)
-{
-    for(int i=0;i<n;i++)
-    {
-        cout<<s[i].rollno<<"           "<<s[i].name<<"           "<<s[i].total<<endl;
-    }
-}
-//driver program
+// retrive data from file student.txt
 int main()
 {
-    cout<<"The details of student are "<<endl;
-    cout<<"Roll no.           Name           Marks"<<endl;
     Student s[10];
-    getdata(s, 10);
-    display(s, 10);
+    ifstream fin;
+    fin.open("student.txt");
+    for(int i=0;i<10;i++)
+    {
+        fin>>s[i].rollno>>s[i].name>>s[i].class1;
+        cout<<"Roll no. of student "<<i+1<<" is "<<s[i].rollno<<endl;
+        cout<<"Name of student "<<i+1<<" is "<<s[i].name<<endl;
+        cout<<"Class of student "<<i+1<<" is "<<s[i].class1<<endl;
+    }
+    fin.close();
     return 0;
 }

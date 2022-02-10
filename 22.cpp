@@ -5,16 +5,17 @@ classes (Use Runtime Polymorphism).*/
 #include<iostream>
 using namespace std;
 class Person
-{
+{protected:
     int age;
-    string name;
+    char name[30];
     public:
     void getdata()
     {
         cout<<"Enter the age"<<endl;
         cin>>age;
+        cin.ignore();   
         cout<<"Enter the name"<<endl;
-        cin>>name;
+        cin.getline(name,29,'\n');
     }
     void display()
     {

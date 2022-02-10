@@ -2,13 +2,20 @@
 #include <iostream>
 using namespace std;
 
+
+void areaperi(double r, double &area, double &peri)
+{
+    area = 3.14 * r * r;
+    peri = 2 * 3.14 * r;
+}
 int main()
 {
-    ios_base::sync_with_stdio(false);
-    float r;
+    double area, peri, r;
     cout << "Enter the radius of the circle: ";
     cin >> r;
-    cout << "Area of the circle: " << (float)(r*r*3.14)<< endl;
-    cout << "Circumference of the circle: " << (float)(2*r*3.14) << endl;
+    areaperi(r, area, peri);
+    cout << "Area of the circle is: " << area << endl;
+    cout << "Perimeter of the circle is: " << peri << endl;
     return 0;
+   
 }

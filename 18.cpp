@@ -2,24 +2,22 @@
 // using recursion
 #include<iostream>
 using namespace std;
-int f(int n)
+int fibrec(int n)
 {
-    if(n==0)
-        return 0;
-    else if(n==1)
-        return 1;
-    else
-        return (f(n-1)+f(n-2));
+  if(n==0)
+    return 0;
+  if(n==1)
+    return 1;
+  return fibrec(n-1)+fibrec(n-2);
 }
- 
 // using iteration
 
-void itt()
+void fibit()
 {
   int n, first = 0, second = 1, result, i;
-  cout<<"Enter the number of terms : "<<endl;
+  cout<<"Enter the number of terms : "<<flush;
   cin>>n;
-  cout<<"Fibonacci Series is: "<<endl;
+  cout<<"Fibonacci Series using iteration is: "<<endl;
   for (i = 0; i < n; i++)
   {
     if (i <= 1)
@@ -35,18 +33,25 @@ void itt()
 }
 
 int main(){
-  //menu for user to choose the option of fibonacci series 
   int choice;
+  int n;
   cout<<"Enter the choice of fibonacci series"<<endl;
   cout<<"1.Recursion"<<endl;
   cout<<"2.Iteration"<<endl;
   cin>>choice;
+  
   switch(choice){
     case 1:
-      f(5);
+      cout <<"enter the number of terms: "<<flush;
+      cin>>n;
+      cout<<"Fibonacci series using recursion is: "<<endl;
+      for(int i=0;i<n;i++)
+      {
+        cout<<"\t"<<fibrec(i);
+      }
       break;
     case 2:
-      itt();
+      fibit();
       break;
     default:
       cout<<"Invalid choice"<<endl;
